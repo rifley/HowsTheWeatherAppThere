@@ -23,12 +23,12 @@ import okhttp3.Response;
  */
 
 public class WeatherService {
-    public static void findForecast(String location, Callback callback) {
+    public static void findWeather(String zip, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.API_BASE_URL).newBuilder();
-        urlBuilder.addQueryParameter(Constants.YOUR_QUERY_PARAMETER, location);
+        urlBuilder.addQueryParameter(Constants.YOUR_QUERY_PARAMETER, zip);
         urlBuilder.addQueryParameter(Constants.API_KEY_QUERY_PARAMETER, Constants.API_KEY);
         String url = urlBuilder.build().toString();
 
