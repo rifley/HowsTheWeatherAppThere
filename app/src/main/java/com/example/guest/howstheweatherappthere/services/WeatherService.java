@@ -56,7 +56,9 @@ public class WeatherService {
                         .getJSONObject(0).getString("description");
                 Double humidity = weatherJSON.getJSONObject("main")
                         .getDouble("humidity");
+                Log.v("humidity", humidity.toString());
                 String name = weatherJSON.getString("name");
+                Log.v("name", name);
                 Weather responseWeather = new Weather(temperature, description, humidity, name);
                 weather.add(responseWeather);
             }
